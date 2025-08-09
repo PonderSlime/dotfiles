@@ -1,0 +1,188 @@
+configuration {
+    font:                       "JetBrainsMono Nerd Font SemiBold 12";
+    modi:                       "drun,run,filebrowser";
+    show-icons:                 true;
+    display-drun:               "Apps";
+    display-run:                "Run";
+    display-filebrowser:        "Files";
+    display-window:             "Windows";
+    drun-display-format:        "{name}";
+    hover-select:               true;
+    me-select-entry:            "MouseSecondary";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+    dpi:						1;
+}
+@theme "../../.cache/wal/colors-rofi-dark.rasi"
+* {
+    background-alt:              @selected-active-background;
+    selected:                    @selected-urgent-background;
+    active:                      @selected-normal-background;
+    urgent:                      @selected;
+    text-selected:               @background;
+    text-color:                  @foreground;
+    border-color:                @selected;
+}
+
+/* ---- Window ---- */
+window {
+    border:                     0px;
+    border-radius:              10px;
+    location:                   center;
+    anchor:                     center;
+    width:                      50%;
+    background-color:           @background;
+}
+mainbox {
+    enabled:                     true;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "listbox" ];
+    background-color:            transparent;
+}
+inputbar {
+    enabled:                     true;
+    padding:                     10px 10px 50px 10px;
+    margin:                      10px;
+    background-color:            transparent;
+    border-radius:               25px;
+    orientation:                 horizontal;
+    children:                    ["entry", "dummy", "mode-switcher" ];
+}
+entry {
+    enabled:                     true;
+    expand:                      false;
+    width:                       20%;
+    padding:                     10px;
+    border-radius:               12px;
+    background-color:            @selected;
+    text-color:                  @text-selected;
+    cursor:                      text;
+    placeholder:                 "Search "; // << Search symbol
+    placeholder-color:           inherit;
+}
+listbox {
+    spacing:                     10px;
+    padding:                     10px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "message", "listview" ];
+}
+listview {
+    enabled:                     true;
+    columns:                     2;
+    lines:                       6;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                false;
+    fixed-columns:               false;    
+    spacing:                     10px;
+    background-color:            transparent;
+    border:                      0px;
+    scroll-method: 1;
+}
+dummy {
+    expand:                      true;
+    background-color:            transparent;
+}
+mode-switcher{
+    enabled:                     true;
+    spacing:                     10px;
+    background-color:            transparent;
+}
+button {
+    width:                       5%;
+    padding:                     12px;
+    border-radius:               12px;
+    background-color:            @text-selected;
+    text-color:                  @text-color;
+    cursor:                      pointer;
+}
+button selected {
+    background-color:            @selected;
+    text-color:                  @text-selected;
+}
+scrollbar {
+    border:       				0;
+    handle-color: 				@background-alt;
+    handle-width: 				2px ;
+    padding:      				0;
+}
+element {
+    enabled:                     true;
+    spacing:                     10px;
+  	padding: 					 10px;
+    border-radius:               12px;
+    background-color:            transparent;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            @urgent;
+    text-color:                  @foreground;
+}
+element normal.active {
+    background-color:            @active;
+    text-color:                  @foreground;
+}
+element selected.normal {
+    border:                      1px;
+    border-radius:               16px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @background-alt;
+}
+element selected.urgent {
+    background-color:            @urgent;
+    text-color:                  @text-selected;
+}
+element selected.active {
+    background-color:            @urgent;
+    text-color:                  @text-selected;
+}
+element alternate.normal {
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element alternate.urgent {
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element alternate.active {
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+}
+element-text {
+    font:						"JetBrainsMono Nerd Font SemiBold 12";
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+message {
+    background-color:            transparent;
+    border:                      0px;
+}
+textbox {
+    padding:                     12px;
+    border-radius:               10px;
+    background-color:            @background-alt;
+    text-color:                  @background;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+error-message {
+    padding:                     12px;
+    border-radius:               20px;
+    background-color:            @background-alt;
+    text-color:                  @background;
+}
