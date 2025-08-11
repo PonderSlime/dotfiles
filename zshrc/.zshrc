@@ -76,8 +76,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-	zsh-syntax-highlighting
+	zsh-navigation-tools
+	zsh-interactive-cd
+	sudo
+	ssh
+	hitchhiker
 	vi-mode
+	archlinux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -129,8 +134,8 @@ POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 echo "TO-DO List:"
 todo
 
-(cat ~/.cache/wal/sequences &)
-source ~/.cache/wal/colors-tty.sh
+(cat ~/.cache/cwal/sequences &)
+source ~/.cache/cwal/colors-tty.sh
 
 #echo >> /dev/null
 export CAPACITOR_ANDROID_STUDIO_PATH=/home/micah/android-studio/src/android-studio/bin/studio.sh

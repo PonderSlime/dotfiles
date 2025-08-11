@@ -7,7 +7,7 @@ set -x
 
 TEMP_FILE=$(mktemp)
 
-cat ~/.cache/wal/colors-cava.ini >> "$TEMP_FILE"
+cat ~/.cache/cwal/colors-cava.ini >> "$TEMP_FILE"
 
 sed -i '/\[color\]/,/^$/d' ~/.config/cava/config
 cat "$TEMP_FILE" >> ~/.config/cava/config
