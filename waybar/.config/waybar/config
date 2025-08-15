@@ -138,8 +138,6 @@
             "modules-center": ["hyprland/workspaces"],
             "modules-right": ["group/expand", "mpd","pulseaudio#audio", "pulseaudio#mic"],
 
-
-
             "hyprland/workspaces": {
                 "format": "{icon}",
                 "format-icons": {
