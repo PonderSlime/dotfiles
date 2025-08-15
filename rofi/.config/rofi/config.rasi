@@ -13,7 +13,7 @@ configuration {
     window-format:              "{w} · {c} · {t}";
     dpi:						1;
 }
-@theme "../../.cache/cwal/colors-rofi-dark.rasi"
+@theme "~/.cache/cwal/colors-rofi-dark.rasi"
 * {
     background-alt:              @selected-active-background;
     selected:                    @selected-urgent-background;
