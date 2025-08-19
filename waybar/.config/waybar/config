@@ -81,7 +81,7 @@
                 ],
             },
             "custom/pacman": {
-                "format": "󰅢 {}",
+                "format": "󰅢  {}",
                 "interval": 30,
                 "exec": "checkupdates | wc -l",
                 "exec-if": "exit 0",
@@ -206,10 +206,6 @@
             "temperature": {
                 "critical-threshold": 80,
                 "format": "",
-            },
-            "tray": {
-                "icon-size": 14,
-                "spacing": 10
             },
             "disk": {
                 "interval": 30,
