@@ -278,7 +278,7 @@ monstercat = 1
 [color]
 gradient         = 1
 gradient_count   = 4
-gradient_color_1 = '#A36666'
-gradient_color_2 = '#384E89'
-gradient_color_3 = '#66679D'
-gradient_color_4 = '#A48AB3'
+gradient_color_1 = '#435571'
+gradient_color_2 = '#1c3049'
+gradient_color_3 = '#25414c'
+gradient_color_4 = '#dcc59f'
