@@ -134,9 +134,9 @@ POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 echo "TO-DO List:"
 todo
 
-(cat ~/.cache/cwal/sequences &)
-source ~/.cache/cwal/colors-tty.sh
-
+# (cat ~/.cache/cwal/sequences &)
+# source ~/.cache/cwal/colors-tty.sh
+source ~/.cache/matugen/colors-tty.sh
 #echo >> /dev/null
 export CAPACITOR_ANDROID_STUDIO_PATH=/home/micah/android-studio/src/android-studio/bin/studio.sh
 export NODE_OPTIONS=--openssl-legacy-provider

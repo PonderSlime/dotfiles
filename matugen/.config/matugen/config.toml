@@ -1,0 +1,29 @@
+[config]
+
+[templates.waybar]
+input_path = './templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.hyprland]
+input_path = './templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/hyprland-colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.cava]
+input_path = './my-templates/cava-colors.ini'
+output_path = '~/.config/cava/config-colors.txt'
+post_hook = "pkill -USR1 cava"
+
+[templates.kitty]
+input_path = './templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/colors.conf'
+post_hook = "kitty +kitten themes --reload-in=all colors"
+
+[templates.tty]
+input_path = './my-templates/colors-tty.sh'
+output_path = '~/.cache/matugen/colors-tty.sh'
+
+[templates.rofi]
+input_path = './templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'

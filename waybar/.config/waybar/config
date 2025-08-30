@@ -3,9 +3,9 @@
         "layer": "top",
             "position": "top",
             "reload_style_on_change": true,
-            "modules-left": ["custom/notification","custom/pacman","tray"],
-            "modules-center": ["clock"],
-            "modules-right": ["bluetooth","network","battery"],
+            "modules-left": ["custom/notification","hyprland/workspaces"],
+            "modules-center": ["custom/cava"],
+            "modules-right": ["group/expand","tray","bluetooth","network","battery","clock"],
 
 
             "hyprland/workspaces": {
@@ -107,7 +107,7 @@
                 "modules": ["custom/expand", "custom/colorpicker","cpu","memory","temperature","custom/endpoint"],
             },
             "custom/colorpicker": {
-                "format": "{}",
+                "format": "/",
                 "return-type": "json",
                 "interval": "once",
                 "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
@@ -129,90 +129,17 @@
                 "icon-size": 14,
                 "spacing": 10
             },
-    },
-    {
-        "layer": "bottom",
-            "position": "bottom",
-            "reload_style_on_change": true,
-            "modules-left": ["custom/rofi"],
-            "modules-center": ["hyprland/workspaces"],
-            "modules-right": ["group/expand", "mpd","pulseaudio#audio", "pulseaudio#mic"],
-
-            "hyprland/workspaces": {
-                "format": "{icon}",
-                "format-icons": {
-                    "active": "",
-                    "default": "",
-                    "empty": ""
-                },
-                "persistent-workspaces": {
-                    "*": [ 1,2,3,4,5 ]
-                }
-            },
-
-            "pulseaudio#audio": {
-                "format": "{icon} {volume}",
-                "format-bluetooth-muted": "󰟎",
-                "format-muted": "󰸈",
-                "format-icons": {
-                "headphone": "",
-                "default": ""
-                },
-                "on-click" : "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-                "on-scroll-down" : "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1",
-                "on-scroll-up" : "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
-                "tooltip": false
-            },
-
-            "pulseaudio#mic": {
-                "format": "{format_source}",
-                "format-source": " {volume}",
-                "format-source-muted": "",
-                "on-click" : "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-                "on-scroll-down" : "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+ -l 1",
-                "on-scroll-up" : "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-",
-                "tooltip": true,
-            },
-            "custom/rofi": {
-                "tooltip": false,
-                "format": "Apps",
-                "on-click": "rofi -show drun",
-                "escape": true
-            },
-            "custom/expand": {
-                "format": "",
-                "tooltip": false
-            },
-            "custom/endpoint":{
-                "format": "|",
-                "tooltip": false
-            },
-            "group/expand": {
-                "orientation": "horizontal",
-                "drawer": {
-                    "transition-duration": 600,
-                    "transition-to-left": true,
-                    "click-to-reveal": true
-                },
-                "modules": ["custom/expand", "custom/colorpicker","cpu","memory","disk","temperature","custom/endpoint"],
-            },
-            "cpu": {
-                "format": "󰻠",
-                "tooltip": true
-            },
-            "memory": {
-                "format": ""
-            },
-            "temperature": {
-                "critical-threshold": 80,
-                "format": "",
-            },
-            "disk": {
-                "interval": 30,
-                "format": "🖴", // {free} GB out of {total} GB available.",
-                "tooltip": true,
-                "unit": "GB"
-                // 0.25 GB out of 2000.00 GB available. Alternatively 241.3MiB out of 1.9TiB available.
+            "mpris": {
+              "format": "DEFAULT: {player_icon} {dynamic}",
+              "format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+              "player-icons": {
+                "default": "▶",
+                "mpv": "🎵"
+              },
+              "status-icons": {
+                "paused": "⏸"
+              },
+              // "ignored-players": ["firefox"]
             },
             "mpd": {
                 "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})  ",
@@ -240,5 +167,11 @@
                 "tooltip-format": "MPD (connected)",
                 "tooltip-format-disconnected": "MPD (disconnected)"
             },
-    }
+            "custom/cava": {
+              "format": "{}",
+              "exec": "~/.config/waybar/scripts/cava.sh"
+            }
+
+    },
+    
 ]
